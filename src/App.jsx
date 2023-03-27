@@ -15,8 +15,7 @@ function App(){
 
     <Route index element={<HomePage/>}></Route>
     <Route path='signin' element={<Signin/>}/>
-    <Route path='signup' element={<SignupPage/>}/> 
- 
+    <Route path='signup' element={<SignupPage/>}/>
   </Routes>
      </main>
  

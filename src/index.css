@@ -60,6 +60,27 @@ background-color: rgba(0, 0, 0, 0.407)
   }
 
 
-  .nav-link:hover{
+  @media (max-width:639px) {
+  
 
+    .resp{
+      flex-direction: column;
+
+   float: right;
+   color: white;
+  align-self: flex-start;
+  background-color: aqua;
+   
+   width: 50%;
+   transform: translateX(40%);
+   margin-top: 1em;
+  
+
+
+    }
+
+   
+    
   }
+  
+  
