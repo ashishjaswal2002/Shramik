@@ -11,6 +11,8 @@ body{
 
     overflow: hidden;
 
+
+
     
 }
 
@@ -32,55 +34,37 @@ background-color: rgba(0, 0, 0, 0.407)
 
 }
 
-#sidebar a.active {
-    color: red;
-  }
+
   
 
-  .nav-link {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 5px;
-    
-  }
-  
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #000;
-    transition: all 0.3s ease-in-out;
-  }
+ 
   
   .nav-link:hover::after {
     width: 100%;
   }
 
 
-  @media (max-width:639px) {
-  
+  @media (max-width:540px) {
 
-    .resp{
+
+  
+    .resp__two{
       flex-direction: column;
+          
 
-   float: right;
-   color: white;
-  align-self: flex-start;
-  background-color: aqua;
-   
-   width: 50%;
-   transform: translateX(40%);
-   margin-top: 1em;
-  
+      height: 100vh;
+    
 
 
+     
+      
     }
 
-   
-    
+
+
+     
   }
+
   
+
   
