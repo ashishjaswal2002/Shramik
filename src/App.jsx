@@ -1,21 +1,34 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
-import { Signin } from './pages/Signin';
-import { SignupPage } from './pages/SignupPage';
+import { UserLogin
+ } from './pages/UserLogin';
+import { WorkerLogin } from './pages/WorkerLogin';
+import { Contact } from './pages/Contact';
+import { NavLink } from 'react-router-dom';
+import { HeaderSection } from './shared/HeaderSection';
+
 
 function App(){
 
  return (
  <BrowserRouter>
- 
+    
+
+     
+    <HeaderSection/>
+    
+  
+
 
      <main>
+      
   <Routes>
 
 
-    <Route index element={<HomePage/>}></Route>
-    <Route path='signin' element={<Signin/>}/>
-    <Route path='signup' element={<SignupPage/>}/>
+   <Route path='/'element={<HomePage/>} ></Route>
+    <Route path='userlogin' element={<UserLogin/>}/>
+    <Route path='workerlogin' element={<WorkerLogin/>}/>
+    <Route path='contact' element = {<Contact/>}/>
   </Routes>
      </main>
  
