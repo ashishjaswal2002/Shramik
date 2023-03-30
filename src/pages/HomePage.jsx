@@ -1,24 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+
 import { SectionOne } from "../components/SectionOne";
 
-import imageOne from '/src/assets/Girl.png'
-import imageTwo from "/src/assets/Man.png";
-
-const Illust  = [{
-
-  id:1,
-  text:'Dummy text for the section with the given id',
-  image:imageOne
-},
-{
-id:2,
-text:'Dummy text for the section with the given id 2',
-image:imageTwo
-}
-
-]
 
 
 
@@ -62,13 +45,13 @@ export const HomePage = () => {
 
       </div>
         </section>
-        <main className=" p-2 max-w-4xl
+        <section className=" p-2 max-w-[960px]
           mx-auto">
  <SectionOne/>
 
 
         
-        </main>
+        </section>
     </>
   );
 };
