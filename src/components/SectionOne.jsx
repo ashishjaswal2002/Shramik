@@ -47,8 +47,8 @@ export const SectionOne = () => {
          <div className=' '>
 
         <img src={ills.image} alt={ills.text} className='w-[250px] mx-auto' />
-        <h1 className='font-bold  text-[2rem] text-center'>{ills.heading}</h1>
         <div className=' p-4 '>
+        <h1 className='font-bold  text-[2rem] '>{ills.heading}</h1>
 
         <p>{ills.text}</p>
         </div>
