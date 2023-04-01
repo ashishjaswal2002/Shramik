@@ -33,7 +33,7 @@ export const HomePage = () => {
 
       <div
         className=" top-[30%] text-center w-[20em] sm:w-[30em]  mx-auto absolute left-[50%] right-[50%] leading-8
-        -translate-x-[50%] -translate-y-[50%]"
+        -translate-x-[50%] -translate-y-[50%] "
         >
         <p className=" text-[3.5rem] sm:text-[4em] text-white font-extrabold">Shramik</p>
 

@@ -1,77 +1,150 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { useState,useEffect} from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import Logo from '../assets/Logo.png'
+
 
 export const HeaderSection = () => {
+  const [isOpen, setOpen] = useState(false);
 
-  const [isOpen,setOpen] = useState(false);
-
-  
-  function toggleNav(){
+  function toggleNav() {
     setOpen(!isOpen);
-
-
   }
 
-useEffect(()=>{
-   
-  document.body.style.overflow=isOpen?'hidden':'auto';
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
 
-
-  return()=>{
-    document.body.style.overflow='auto';
-    
-  }
-
-},[isOpen])
-
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
-   <>
-   {isOpen &&
-       <div className='bg-black w-full h-screen bg-opacity-60 backdrop-blur-md fixed '>
-        </div>
-}
-     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4  fixed top-0 
-      bg-white overflow-hidden    " >
-    
-
-      <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
-        <div className="flex items-center justify-between">
-          <NavLink className="flex-none text-xl font-semibold text-white dark:text-gray-800" to='/' >Logo</NavLink>
-          <div className="sm:hidden">
-            <button onClick={toggleNav} type="button" className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/[.25] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" data-hs-collapse="#navbar-dark" aria-controls="navbar-dark" aria-label="Toggle navigation">
-           
-          
-            <svg width="11" height="10" className="" viewBox="0 0 72 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.8769 32.9393L28.4077 50.6963L23.3219 57L0 28.5L23.3219 0L28.4077 6.30374L13.8769 24.0607H72V32.9393H13.8769ZM72 1.86449V10.743H35.6731V1.86449H72ZM72 46.257V55.1355H35.6731V46.257H72Z" fill="#F8F8F8"/>
-</svg>
-
-
-            </button>
+    <>
+      {isOpen && (
+        <div className="bg-black w-full h-screen bg-opacity-60 backdrop-blur-md fixed "></div>
+      )}
+      <header
+        className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4  fixed top-0 
+      bg-white overflow-hidden bg-opacity-80    "
+      >
+        <nav
+          className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+          aria-label="Global"
+        >
+          <div className="flex items-center justify-between">
+          <img src={Logo} alt='Shramik Logo' className="w-[140px] logo" />
+            <div className="sm:hidden">
+              <button
+                onClick={toggleNav}
+                type="button"
+                className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/[.25] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                data-hs-collapse="#navbar-dark"
+                aria-controls="navbar-dark"
+                aria-label="Toggle navigation"
+              >
+                <svg
+                  width="11"
+                  height="10"
+                  className=""
+                  viewBox="0 0 72 57"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.8769 32.9393L28.4077 50.6963L23.3219 57L0 28.5L23.3219 0L28.4077 6.30374L13.8769 24.0607H72V32.9393H13.8769ZM72 1.86449V10.743H35.6731V1.86449H72ZM72 46.257V55.1355H35.6731V46.257H72Z"
+                    fill="#F8F8F8"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <div id="navbar-dark" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
-          <div className="flex flex-col gap-8 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5   h-[18rem] sm:h-[2.1em]">
-   
+          <div
+            id="navbar-dark"
+            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+          >
+            <div className="flex flex-col gap-8 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5   h-[50%] sm:h-[3em]">
+              <NavLink to="/">Home</NavLink>
 
+              <NavLink
+                className=" font-medium "
+                to="userlogin"
+                aria-current="page"
+              >
+                Login
+              </NavLink>
 
-            <div>User Profile</div>
-             
-            <NavLink className=" font-medium " to='userlogin'  aria-current="page" >User Login</NavLink>
-            <NavLink className=" font-medium " to='workerlogin' aria-current="page">Worker Login</NavLink>
-            <NavLink className=" font-medium " to='contact' aria-current="page" >Contact</NavLink>
-            <NavLink>Logout</NavLink>
-            <div>Change Language</div>
+              <NavLink
+                className=" font-medium "
+                to="contact"
+                aria-current="page"
+              >
+                Contact
+              </NavLink>
+              {/* <NavLink>Logout</NavLink> */}
+              <div>Change Language</div>
 
+              <div class="hs-dropdown relative inline-flex">
+                <button
+                  id="hs-dropdown-custom-trigger"
+                  type="button"
+                  class="hs-dropdown-toggle py-1 pl-1 pr-3 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                >
+                  <img
+                    className="w-8 h-auto rounded-full"
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                    alt="Maria"
+                  />
+                  <span className="text-gray-600 font-medium truncate max-w-[7.5rem] dark:text-gray-400">
+                    Maria
+                  </span>
+                  <svg
+                    className="hs-dropdown-open:rotate-180 w-2.5 h-2.5 text-gray-600"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden  min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700"
+                  aria-labelledby="hs-dropdown-custom-trigger"
+                >
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    href="#"
+                  >
+                  Profile Settings
+                  </a>
+                 
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    href="#"
+                  >
+                 Logout ↪
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    href="#"
+                  >
+                    Help
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </nav>
-    
-    </header>
-        
-
-   
-   </>
-  )
-}
+        </nav>
+      </header>
+    </>
+  );
+};

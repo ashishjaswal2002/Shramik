@@ -19,7 +19,7 @@ image:imageTwo
 {
 
   id:3,
-  heading:'Hello weorl; fdsf',
+  heading:'Hi I am Girl',
   text:'The reason we use Lorem Ipsum is simple. If we used real text, it would possibly distract from the mistakenly inappropriate. Or if we used something like "Insert Text Here...", this would also distract from the design. Using Lorem Ipsum allows us to SEE the design without being distracted by readable or unrealistic text.',
    image:imageThree
 

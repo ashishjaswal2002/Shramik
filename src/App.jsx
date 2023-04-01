@@ -8,14 +8,16 @@ import { NavLink } from 'react-router-dom';
 import { HeaderSection } from './shared/HeaderSection';
 
 
+
+
 function App(){
 
  return (
  <BrowserRouter>
     
-
+<HeaderSection/>
      
-    <HeaderSection/>
+
     
   
 
