@@ -32,8 +32,10 @@ image:imageTwo
 
 
 export const SectionOne = () => {
+
   return (
     <>
+
 
     <div className='mt-7 '>
         <h2 className='text-center text-3xl sm:text-5xl'>We Provide Excellent Service to meet your needs.</h2>
@@ -53,6 +55,7 @@ export const SectionOne = () => {
         <p>{ills.text}</p>
         </div>
       </div>
+ 
       </li>
      ))}
 

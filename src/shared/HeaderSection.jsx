@@ -1,16 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import { LoginModal } from "../components/LoginModal";
 import Logo from '../assets/Logo.png'
 
 
 export const HeaderSection = () => {
   const [isOpen, setOpen] = useState(false);
 
+  const [modal,showModal] = useState(false);
+
   function toggleNav() {
     setOpen(!isOpen);
   }
+
+
+const openModal  = ()=>{
+  showModal(prev=>!prev)
+}
+  
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -22,12 +30,16 @@ export const HeaderSection = () => {
 
   return (
     <>
+    
+    {modal &&<LoginModal/>}
+
+
       {isOpen && (
-        <div className="bg-black w-full h-screen bg-opacity-60 backdrop-blur-md fixed "></div>
+        <div className="bg-black w-full h-screen bg-opacity-60 backdrop-blur-md fixed  "></div>
       )}
       <header
         className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4  fixed top-0 
-      bg-white overflow-hidden bg-opacity-80    "
+   overflow-hidden bg-white z-10 text-black bg-opacity-90 "
       >
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
@@ -64,16 +76,18 @@ export const HeaderSection = () => {
             id="navbar-dark"
             className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
           >
-            <div className="flex flex-col gap-8 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5   h-[50%] sm:h-[3em]">
+            <div className="flex flex-col gap-8 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5   h-[50%] sm:h-[2em]">
               <NavLink to="/">Home</NavLink>
 
               <NavLink
                 className=" font-medium "
-                to="userlogin"
+                
                 aria-current="page"
+                onClick={ openModal}
               >
                 Login
               </NavLink>
+              
 
               <NavLink
                 className=" font-medium "
@@ -85,11 +99,11 @@ export const HeaderSection = () => {
               {/* <NavLink>Logout</NavLink> */}
               <div>Change Language</div>
 
-              <div class="hs-dropdown relative inline-flex">
+              <div className="hs-dropdown relative inline-flex">
                 <button
                   id="hs-dropdown-custom-trigger"
                   type="button"
-                  class="hs-dropdown-toggle py-1 pl-1 pr-3 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                  className="hs-dropdown-toggle py-1 pl-1 pr-3 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none  focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                 >
                   <img
                     className="w-8 h-auto rounded-full"
@@ -110,31 +124,31 @@ export const HeaderSection = () => {
                     <path
                       d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </button>
 
                 <div
-                  class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden  min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700"
+                  className="hs-dropdown-menu   transition-[opacity,margin]  duration hs-dropdown-open:opacity-100 opacity-0 hidden  min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700"
                   aria-labelledby="hs-dropdown-custom-trigger"
                 >
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     href="#"
                   >
                   Profile Settings
                   </a>
                  
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     href="#"
                   >
                  Logout ↪
                   </a>
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     href="#"
                   >
                     Help
