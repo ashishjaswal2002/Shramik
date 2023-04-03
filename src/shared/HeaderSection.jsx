@@ -1,24 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { LoginModal } from "../components/LoginModal";
 import Logo from '../assets/Logo.png'
-
+import useModalStore from "../store/State";
 
 export const HeaderSection = () => {
-  const [isOpen, setOpen] = useState(false);
 
-  const [modal,showModal] = useState(false);
-
-  function toggleNav() {
-    setOpen(!isOpen);
-  }
+ const {isOpen,openModal,closeModal,isLogin,loggedIn,logout }  = useModalStore();
 
 
-const openModal  = ()=>{
-  showModal(prev=>!prev)
-}
-  
+
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -31,7 +23,7 @@ const openModal  = ()=>{
   return (
     <>
     
-    {modal &&<LoginModal/>}
+
 
 
       {isOpen && (
@@ -49,7 +41,7 @@ const openModal  = ()=>{
           <img src={Logo} alt='Shramik Logo' className="w-[140px] logo" />
             <div className="sm:hidden">
               <button
-                onClick={toggleNav}
+            
                 type="button"
                 className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/[.25] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                 data-hs-collapse="#navbar-dark"
@@ -87,6 +79,8 @@ const openModal  = ()=>{
               >
                 Login
               </NavLink>
+              {isOpen && <LoginModal closing={closeModal} userlogedIn={loggedIn} />}
+
               
 
               <NavLink
@@ -94,10 +88,12 @@ const openModal  = ()=>{
                 to="contact"
                 aria-current="page"
               >
-                Contact
+                🛂 Help Support
               </NavLink>
               {/* <NavLink>Logout</NavLink> */}
               <div>Change Language</div>
+{isLogin &&
+
 
               <div className="hs-dropdown relative inline-flex">
                 <button
@@ -140,13 +136,21 @@ const openModal  = ()=>{
                   >
                   Profile Settings
                   </a>
-                 
-                  <a
+
+                  <NavLink to='categories'
                     className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     href="#"
                   >
+                  Your Jobs
+                  </NavLink>
+                 
+                  <a
+                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    href="#" onClick={logout}
+                  >
                  Logout ↪
                   </a>
+
                   <a
                     className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                     href="#"
@@ -155,6 +159,7 @@ const openModal  = ()=>{
                   </a>
                 </div>
               </div>
+              }
             </div>
           </div>
         </nav>

@@ -1,11 +1,11 @@
-import React,{useState} from "react";
+import React from "react";
 
 import { SectionOne } from "../components/SectionOne";
 
 import { NavLink } from "react-router-dom";
 
 
-import { LoginModal } from "../components/LoginModal";
+
 
 export const HomePage = () => {
   

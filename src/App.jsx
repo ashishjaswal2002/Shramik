@@ -1,45 +1,28 @@
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
-import { UserLogin
- } from './pages/UserLogin';
-import { WorkerLogin } from './pages/WorkerLogin';
-import { Contact } from './pages/Contact';
-import { NavLink } from 'react-router-dom';
-import { HeaderSection } from './shared/HeaderSection';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
 
+import { WorkerLogin } from "./pages/WorkerLogin";
+import { Contact } from "./pages/Contact";
 
+import { HeaderSection } from "./shared/HeaderSection";
+import { CategoriesSection } from "./components/CategoriesSection";
 
+function App() {
+  return (
+    <BrowserRouter>
+      <HeaderSection />
 
-function App(){
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
 
- return (
- <BrowserRouter>
-    
-<HeaderSection/>
-     
-
-    
-  
-
-
-     <main>
-      
-  <Routes>
-
-
-   <Route path='/'element={<HomePage/>} ></Route>
-
-    <Route path='workerlogin' element={<WorkerLogin/>}/>
-    <Route path='contact' element = {<Contact/>}/>
-  </Routes>
-     </main>
- 
- 
- </BrowserRouter>
- )
-
-
+          <Route path="workerlogin" element={<WorkerLogin />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="categories" element={<CategoriesSection />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
 }
 
-
-export   default App;
+export default App;

@@ -3,6 +3,8 @@ import imageOne from '/src/assets/Girl.png'
 import imageTwo from "/src/assets/Man.png";
 import imageThree from '/src/assets/YoungWomen.png';
 
+
+
 const Illust  = [{
 
   id:1,
@@ -35,6 +37,7 @@ export const SectionOne = () => {
 
   return (
     <>
+
 
 
     <div className='mt-7 '>
