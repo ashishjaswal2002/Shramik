@@ -4,8 +4,10 @@ import { SectionOne } from "../components/SectionOne";
 
 import { NavLink } from "react-router-dom";
 
+import {AiFillLinkedin,AiFillTwitterCircle,AiFillFacebook,AiOutlineInstagram} from 'react-icons/ai'
 
-
+import {DownArrow} from '../assets/DownArrow'
+import {image} from '..//assets/Logo.png';
 
 export const HomePage = () => {
   
@@ -37,10 +39,12 @@ export const HomePage = () => {
         <p className="mt-5 text-white text-[1.3rem] leading-10 font-light opacity-75 sm:text-[1.5rem]">
           Uniting shramiks across the nation for a brighter tomorrow.
         </p>
-        
-         
+    
 
+{/* Addd Arrow  */}
       </div>
+
+
         </section>
         <section className=" p-2 max-w-[960px]
           mx-auto">
@@ -57,7 +61,7 @@ export const HomePage = () => {
  
        <div className=" p-10 border-b-2 w-full sm:max-w-[50em] mx-auto ">
 
-        <h1>Logo</h1>
+     
           <div className="flex gap-4 mt-2 justify-evenly pt-7">
 
 
@@ -80,11 +84,11 @@ export const HomePage = () => {
           <h1>Social Links</h1>
           <div className="flex flex-col  mt-4 gap-3">
 
-          <div><NavLink>Linked In</NavLink></div>
-          <div><NavLink>Twitter</NavLink></div>
-          <div><NavLink> Facebook</NavLink></div>
+          <div ><NavLink><AiFillLinkedin className="hover:text-blue-400"/></NavLink></div>
+          <div><NavLink><AiFillTwitterCircle className="hover:text-blue-500" /></NavLink></div>
+          <div><NavLink> <AiFillFacebook className="hover:text-blue-700" /></NavLink></div>
           
-          <div><NavLink>Instagram</NavLink></div>
+          <div><NavLink><AiOutlineInstagram className="hover:text-pink-400" /></NavLink></div>
           </div>
         </div>
           </div>

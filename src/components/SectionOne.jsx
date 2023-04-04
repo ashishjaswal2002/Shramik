@@ -8,20 +8,20 @@ import imageThree from '/src/assets/YoungWomen.png';
 const Illust  = [{
 
   id:1,
-  heading:'Hello weorl; fdsf',
+  heading:'Dummy Text First',
   text:'The reason we  used real text, it would possibly distract from the DESIGN of a page (or indeed, might even be mistakenly inappropriate. Or if we used something like "Insert Text Here...", this would also distract from the design. Using Lorem Ipsum allows us to SEE the design without being distracted by readable or unrealistic text.',
   image:imageOne
 },
 {
 id:2,
-heading:'Hello weorl; fdsf',
+heading:'Dummy text Two',
 text:'The reason we use Lorem Ipsum is sim sibly distract from the DESIGN of a page (or indeed, might even be mistakenly inappropriate. Or if we used something like "Insert Text Here...", this would also distract from the design. Using Lorem Ipsum allows us to SEE the design without being distracted by readable or unrealistic text.',
 image:imageTwo
 },
 {
 
   id:3,
-  heading:'Hi I am Girl',
+  heading:'Simple and Steady',
   text:'The reason we use Lorem Ipsum is simple. If we used real text, it would possibly distract from the mistakenly inappropriate. Or if we used something like "Insert Text Here...", this would also distract from the design. Using Lorem Ipsum allows us to SEE the design without being distracted by readable or unrealistic text.',
    image:imageThree
 
