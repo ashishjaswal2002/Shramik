@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { LoginModal } from "../components/LoginModal";
-import Logo from '../assets/Logo.png'
+import img from '/Logo.png'
 import useModalStore from "../store/State";
 
 export const HeaderSection = () => {
@@ -38,7 +38,7 @@ export const HeaderSection = () => {
           aria-label="Global"
         >
           <div className="flex items-center justify-between">
-          <img src={Logo} alt='Shramik Logo' className="w-[140px] logo" />
+          <img src={img}  alt='Shramik Logo' className="w-[140px] logo" />
             <div className="sm:hidden">
               <button
             

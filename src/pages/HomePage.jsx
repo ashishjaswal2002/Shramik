@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import {AiFillLinkedin,AiFillTwitterCircle,AiFillFacebook,AiOutlineInstagram} from 'react-icons/ai'
 
 import {DownArrow} from '../assets/DownArrow'
-import {image} from '..//assets/Logo.png';
+
 
 export const HomePage = () => {
   
